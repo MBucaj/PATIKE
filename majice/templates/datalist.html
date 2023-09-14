@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Majice List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>Majice List</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Marka</th>
+            <th>Ime</th>
+            <th>Materijal</th>
+            <th>Boja</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for majica in majice %}
+        <tr>
+            <td>{{ majica.id_majica }}</td>
+            <td>{{ majica.marka }}</td>
+            <td>{{ majica.ime }}</td>
+            <td>{{ majica.materijal }}</td>
+            <td>{{ majica.boja }}</td>
+            <td>
+                <a href="{{ url_for('RetrieveMajica', id=majica.id_majica) }}" class="btn btn-primary">View</a>
+                <a href="{{ url_for('edit_majica', id=majica.id_majica) }}" class="btn btn-warning">Edit</a>
+                <a href="{{ url_for('delete_majica', id=majica.id_majica) }}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
