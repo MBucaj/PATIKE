@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tenisica Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>Tenisica Details</h2>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <td>{{ tenisica.id_tenisica }}</td>
+        </tr>
+        <tr>
+            <th>Marka</th>
+            <td>{{ tenisica.marka }}</td>
+        </tr>
+        <tr>
+            <th>Ime</th>
+            <td>{{ tenisica.ime }}</td>
+        </tr>
+        <tr>
+            <th>Materijal</th>
+            <td>{{ tenisica.materijal }}</td>
+        </tr>
+        <tr>
+            <th>Boja</th>
+            <td>{{ tenisica.boja }}</td>
+        </tr>
+    </table>
+    <a href="{{ url_for('RetrieveList') }}" class="btn btn-primary">Back</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tenisice List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>Tenisice List</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Marka</th>
+            <th>Ime</th>
+            <th>Materijal</th>
+            <th>Boja</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for tenisica in tenisice %}
+        <tr>
+            <td>{{ tenisica.id_tenisica }}</td>
+            <td>{{ tenisica.marka }}</td>
+            <td>{{ tenisica.ime }}</td>
+            <td>{{ tenisica.materijal }}</td>
+            <td>{{ tenisica.boja }}</td>
+            <td>
+                <a href="{{ url_for('RetrieveTenisica', id=tenisica.id_tenisica) }}" class="btn btn-primary">View</a>
+                <a href="{{ url_for('edit_tenisica', id=tenisica.id_tenisica) }}" class="btn btn-warning">Edit</a>
+                <a href="{{ url_for('delete_tenisica', id=tenisica.id_tenisica) }}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
